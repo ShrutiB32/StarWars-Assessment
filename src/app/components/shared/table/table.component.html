@@ -1,0 +1,27 @@
+<div class="data-container">
+  <div class="title">
+    <span>SEARCH RESULTS</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>SL no.</th>
+        <th>Character Name</th>
+        <th>Species</th>
+        <th>Birth Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let data of tableData; let i = index">
+        <tr (click)="displayCharacterDetails(data, i + 1)">
+          <td>{{ i + 1 }}</td>
+          <td>{{ data?.name }}</td>
+          <td>
+            {{ data?.speciesNames.length === 0 ? "--" : data.speciesNames[0] }}
+          </td>
+          <td>{{ data?.birth_year }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

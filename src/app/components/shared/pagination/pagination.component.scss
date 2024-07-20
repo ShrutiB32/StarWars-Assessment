@@ -1,0 +1,16 @@
+.pagination-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination-button {
+  border: none;
+  padding: 0.5rem 0.75rem;
+  background-color: rgb(65, 64, 64);
+  color: white;
+  border-radius: 0.25rem;
+}
+
+.active {
+  background-color: rgb(6, 164, 122);
+}

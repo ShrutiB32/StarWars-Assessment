@@ -1,0 +1,84 @@
+<div class="detailspage-container">
+  <div class="intro-container">
+    <div class="profile-image">
+      <img src="../../../assets/profile.svg" />
+    </div>
+    <div class="personal-details-container">
+      <span class="content-text"
+        ><span class="title">Name: </span>{{ characterDetails?.name }}</span
+      >
+      <span class="content-text"
+        ><span class="title">Height: </span>{{ characterDetails?.height }}</span
+      >
+      <span class="content-text"
+        ><span class="title">Mass: </span>{{ characterDetails?.mass }}</span
+      >
+      <span class="content-text"
+        ><span class="title">Hair Color: </span
+        >{{ characterDetails?.hair_color }}</span
+      >
+      <span class="content-text"
+        ><span class="title">Skin Color: </span
+        >{{ characterDetails?.skin_color }}</span
+      >
+      <span class="content-text"
+        ><span class="title">Eye Color: </span
+        >{{ characterDetails?.eye_color }}</span
+      >
+      <span class="content-text"
+        ><span class="title">Birth Year: </span
+        >{{ characterDetails?.birth_year }}</span
+      >
+      <span class="content-text"
+        ><span class="title">Gender: </span>{{ characterDetails?.gender }}</span
+      >
+    </div>
+  </div>
+  <div class="content-container">
+    <div
+      *ngIf="characterDetails?.filmNames?.length !== 0"
+      class="info-card-item"
+    >
+      <div class="title">Films</div>
+      <div class="extra-info-card">
+        <ng-container *ngFor="let film of characterDetails?.filmNames">
+          <span class="content-text">{{ film }}</span>
+        </ng-container>
+      </div>
+    </div>
+
+    <div
+      *ngIf="characterDetails?.speciesNames?.length !== 0"
+      class="info-card-item"
+    >
+      <div class="title">Species</div>
+      <div class="extra-info-card">
+        <ng-container *ngFor="let specie of characterDetails?.speciesNames">
+          <span class="content-text">{{ specie }}</span>
+        </ng-container>
+      </div>
+    </div>
+    <div
+      *ngIf="characterDetails?.starshipsNames?.length !== 0"
+      class="info-card-item"
+    >
+      <div class="title">Star Ships</div>
+      <div class="extra-info-card">
+        <ng-container *ngFor="let starship of characterDetails?.starshipsNames">
+          <span class="content-text">{{ starship }}</span>
+        </ng-container>
+      </div>
+    </div>
+    <div
+      *ngIf="characterDetails?.vehiclesNames?.length !== 0"
+      class="info-card-item"
+    >
+      <div class="title">Vehicles</div>
+      <div class="extra-info-card">
+        <ng-container *ngFor="let vehicle of characterDetails?.vehiclesNames">
+          <span class="content-text">{{ vehicle }}</span>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="pagination-container">
+  <button
+    type="button"
+    class="pagination-button"
+    (click)="onGotoNextPage(1)"
+    [ngClass]="{ active: currentPage === 1 }"
+  >
+    1
+  </button>
+  <button
+    type="button"
+    class="pagination-button"
+    (click)="onGotoNextPage(2)"
+    [ngClass]="{ active: currentPage === 2 }"
+  >
+    2
+  </button>
+  <button
+    type="button"
+    class="pagination-button"
+    (click)="onGotoNextPage(3)"
+    [ngClass]="{ active: currentPage === 3 }"
+  >
+    3
+  </button>
+  <button
+    type="button"
+    class="pagination-button"
+    (click)="onGotoNextPage('Next')"
+    [ngClass]="{ active: currentPage > 3 }"
+  >
+    Next
+  </button>
+</div>

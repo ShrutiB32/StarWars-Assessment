@@ -1,0 +1,238 @@
+<div class="dashboard-container">
+  <div class="filter-container">
+    <form (ngSubmit)="filterFormValue()" class="filter-form-container">
+      <div class="filter-form">
+        <div>
+          <div
+            (click)="toggleDropDownIcon('movies')"
+            class="dropDown-title-container"
+            [ngClass]="{
+              activeClass: this.accordianTitleActive.isMovieClassActive,
+              panelOpen: accordianActiveStatus[0].isActive,
+              activeClose:
+                this.accordianTitleActive.isMovieClassActive &&
+                !accordianActiveStatus[0].isActive
+            }"
+          >
+            <span class="title">Movies</span>
+            <div class="icons">
+              <div
+                class="inverted-triangle"
+                *ngIf="!accordianActiveStatus[0].isActive"
+              ></div>
+              <div
+                class="triangle"
+                *ngIf="accordianActiveStatus[0].isActive"
+              ></div>
+            </div>
+          </div>
+          <div
+            *ngIf="accordianActiveStatus[0].isActive"
+            class="dropdown-content-container"
+          >
+            <ng-container *ngFor="let data of movies">
+              <div class="dropdown-item">
+                <input
+                  type="checkbox"
+                  [value]="data.title"
+                  id="optionName"
+                  [checked]="data.checked"
+                  (change)="onSelectItem(data, 'movies')"
+                />
+                <label for="optionName">{{ data.title }}</label>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div>
+          <div
+            (click)="toggleDropDownIcon('starships')"
+            class="dropDown-title-container"
+            [ngClass]="{
+              activeClass: this.accordianTitleActive.isStarshipClassActive,
+              panelOpen: accordianActiveStatus[1].isActive,
+              activeClose:
+                this.accordianTitleActive.isStarshipClassActive &&
+                !accordianActiveStatus[1].isActive
+            }"
+          >
+            <span class="title">Starships</span>
+            <div class="icons">
+              <div
+                class="inverted-triangle"
+                *ngIf="!accordianActiveStatus[1].isActive"
+              ></div>
+              <div
+                class="triangle"
+                *ngIf="accordianActiveStatus[1].isActive"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            *ngIf="accordianActiveStatus[1].isActive"
+            class="dropdown-content-container"
+          >
+            <ng-container *ngFor="let data of starShips">
+              <div class="dropdown-item">
+                <input
+                  type="checkbox"
+                  [value]="data.name"
+                  id="optionName"
+                  [checked]="data.checked"
+                  (change)="onSelectItem(data, 'starships')"
+                />
+                <label for="optionName">{{ data.name }}</label>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div>
+          <div
+            (click)="toggleDropDownIcon('species')"
+            class="dropDown-title-container"
+            [ngClass]="{
+              activeClass: this.accordianTitleActive.isSpeciesClassActive,
+              panelOpen: accordianActiveStatus[2].isActive,
+              activeClose:
+                this.accordianTitleActive.isSpeciesClassActive &&
+                !accordianActiveStatus[2].isActive
+            }"
+          >
+            <span class="title">Species</span>
+            <div class="icons">
+              <div
+                class="inverted-triangle"
+                *ngIf="!accordianActiveStatus[2].isActive"
+              ></div>
+              <div
+                class="triangle"
+                *ngIf="accordianActiveStatus[2].isActive"
+              ></div>
+            </div>
+          </div>
+          <div
+            *ngIf="accordianActiveStatus[2].isActive"
+            class="dropdown-content-container"
+          >
+            <ng-container *ngFor="let data of species">
+              <div class="dropdown-item">
+                <input
+                  type="checkbox"
+                  [value]="data.name "
+                  id="optionName"
+                  [checked]="data.checked"
+                  (change)="onSelectItem(data, 'species')"
+                />
+                <label for="optionName">{{ data.name }}</label>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div>
+          <div
+            (click)="toggleDropDownIcon('vehicles')"
+            class="dropDown-title-container"
+            [ngClass]="{
+              activeClass: this.accordianTitleActive.isVehiclesClassActive,
+              panelOpen: accordianActiveStatus[3].isActive,
+              activeClose:
+                this.accordianTitleActive.isVehiclesClassActive &&
+                !accordianActiveStatus[3].isActive
+            }"
+          >
+            <span class="title">Vehicles</span>
+            <div class="icons">
+              <div
+                class="inverted-triangle"
+                *ngIf="!accordianActiveStatus[3].isActive"
+              ></div>
+              <div
+                class="triangle"
+                *ngIf="accordianActiveStatus[3].isActive"
+              ></div>
+            </div>
+          </div>
+          <div
+            *ngIf="accordianActiveStatus[3].isActive"
+            class="dropdown-content-container"
+          >
+            <ng-container *ngFor="let data of vehicles">
+              <div class="dropdown-item">
+                <input
+                  type="checkbox"
+                  [value]="data.name "
+                  id="optionName"
+                  [checked]="data.checked"
+                  (change)="onSelectItem(data, 'vehicles')"
+                />
+                <label for="optionName">{{ data.name }}</label>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
+
+        <div>
+            <div
+              (click)="toggleDropDownIcon('birth_year')"
+              class="dropDown-title-container"
+              [ngClass]="{
+                activeClass: this.accordianTitleActive.isBirthYearClassActive,
+                panelOpen: accordianActiveStatus[4].isActive,
+                activeClose:
+                  this.accordianTitleActive.isBirthYearClassActive &&
+                  !accordianActiveStatus[4].isActive
+              }"
+            >
+              <span class="title">Birth Year</span>
+              <div class="icons">
+                <div
+                  class="inverted-triangle"
+                  *ngIf="!accordianActiveStatus[4].isActive"
+                ></div>
+                <div
+                  class="triangle"
+                  *ngIf="accordianActiveStatus[4].isActive"
+                ></div>
+              </div>
+            </div>
+            <div
+              *ngIf="accordianActiveStatus[4].isActive"
+              class="dropdown-content-container"
+            >
+              <ng-container *ngFor="let data of birthYear">
+                <div class="dropdown-item">
+                  <input
+                    type="checkbox"
+                    [value]="data.name "
+                    id="optionName"
+                    [checked]="data.checked"
+                    (change)="onSelectItem(data, 'birthYear')"
+                  />
+                  <label for="optionName">{{ data.name }}</label>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+      </div>
+
+      <button type="submit" class="search-button">Search</button>
+    </form>
+  </div>
+  <div class="table-container">
+    <app-table [tableData]="filteredData"></app-table>
+    <div *ngIf="filteredData.length === 0 && !isNoDataFound" class="loader">
+      <app-loader></app-loader>
+    </div>
+    <div *ngIf="isNoDataFound" class="nodata-container">
+      <span>No Data Found with the respective filters.</span>
+    </div>
+    <div class="pagination-container">
+      <app-pagination
+        [currentPage]="1"
+        (paginationValueEmitter)="onPaginationClick($event)"
+      ></app-pagination>
+    </div>
+  </div>
+</div>
